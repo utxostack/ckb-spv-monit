@@ -1,0 +1,38 @@
+[package]
+name = "monit"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+prometheus-client = "0.22.2"
+tokio = { version = "1", features = ["rt-multi-thread", "net", "macros", "signal", "rt"] }
+http = "0.2.12"
+warp = "0.3.1"
+jsonrpc-utils = { version = "0.2.3", features = ["server", "macros", "axum"] }
+async-trait = "0.1.74"
+axum = "0.6"
+clap = { version = "2.34.0" }
+ckb-types = "0.114.0"
+ckb-sdk = "3.1.0"
+hex = "0.4.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+ckb-jsonrpc-types = "0.114.0"
+ckb-fixed-hash-core = "0.114.0"
+bitcoin = { version = "0.31", features = ["serde"] }
+
+[dependencies.ckb-bitcoin-spv-prover]
+version = "0.1.0"
+git = "https://github.com/ckb-cell/ckb-bitcoin-spv"
+rev = "a6fce4b"
+
+[dependencies.ckb-bitcoin-spv-verifier]
+version = "0.1.0"
+git = "https://github.com/ckb-cell/ckb-bitcoin-spv"
+rev = "a6fce4b"
+
+
+[patch.crates-io.ckb-sdk]
+git = "https://github.com/nervosnetwork/ckb-sdk-rust"
+rev = "b792ee7"
